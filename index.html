@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bananarama Studios</title>
+    <link rel="stylesheet" href="index_styles.css">
+    <script src="index_script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Bananarama Studios</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#forums">Forums</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section">
+            <div class="container">
+                <h2 class="left-content">Welcome to Bananarama Studios</h2>
+                <p class="right-content">Your premier destination for exciting indie games!</p>
+            </div>
+        </section>
+
+        <section id="games" class="section">
+            <div class="container">
+                <h2>Our Games</h2>
+                <div class="slideshow-container">
+                    <div class="slides">
+                        <img src="game1.jpg" alt="Game 1">
+                        <div class="carousel-caption">Game 1</div>
+                    </div>
+                    <div class="slides">
+                        <img src="game2.jpg" alt="Game 2">
+                        <div class="carousel-caption">Game 2</div>
+                    </div>
+                    <div class="slides">
+                        <img src="game3.jpg" alt="Game 3">
+                        <div class="carousel-caption">Game 3</div>
+                    </div>
+                    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="forums" class="section">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="left-content">
+                        <h2>Forums</h2>
+                        <p>Explore discussions and topics in our forums.</p>
+                    </div>
+                    <div class="right-content">
+                        <div class="forums-content">
+                            <!-- Forum content goes here -->
+                            <div class="forum">
+                                <h3>Forum Topic 1</h3>
+                                <p>Description of the forum topic.</p>
+                            </div>
+                            <div class="forum">
+                                <h3>Forum Topic 2</h3>
+                                <p>Description of another forum topic.</p>
+                            </div>
+                            <!-- Add more forums as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="community" class="section">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="left-content">
+                        <h2>Community</h2>
+                        <p>Read the latest posts from our community.</p>
+                    </div>
+                    <div class="right-content">
+                        <div class="community-content">
+                            <!-- Community content goes here -->
+                            <div class="post">
+                                <h3>Community Post 1</h3>
+                                <p>Content of the community post.</p>
+                            </div>
+                            <div class="post">
+                                <h3>Community Post 2</h3>
+                                <p>Content of another community post.</p>
+                            </div>
+                            <!-- Add more community posts as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <section id="contact" class="section contact-us">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <label for="email">Email:</label>
+                    <select name="email" id="email">
+                        <option value="bananarama.development@gmail.com">Development</option>
+                        <option value="bananarama.support@gmail.com">Support</option>
+                        <option value="trendybanana.bananarama@gmail.com">General Inquiry</option>
+                    </select>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter your message here..."></textarea>
+                    <label for="attachments">Attachments:</label>
+                    <input type="file" id="attachments" name="attachments">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bananarama Studios. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

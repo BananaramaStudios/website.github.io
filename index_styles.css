@@ -1,0 +1,249 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1A1A1A; /* Dark background */
+    color: #FFFFFF; /* Light text color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000; /* Dark background */
+    padding: 20px;
+}
+
+.title h1 {
+    font-size: 36px; /* Adjust as needed */
+    color: #FDB515; /* Yellow title */
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FDB515; /* Yellow hover */
+}
+
+main {
+    padding-top: 40px; /* Adjust the padding to increase or decrease separation */
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* Adjust alignment as needed */
+}
+
+.left-content {
+    flex: 1;
+    padding-right: 20px; /* Adjust spacing between left and right content */
+    text-align: left;
+}
+
+.right-content {
+    flex: 1;
+    padding-left: 20px; /* Adjust spacing between left and right content */
+    text-align: left;
+}
+
+.forums-content,
+.community-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.forum,
+.post {
+    background-color: #2B2B2B; /* Dark gray background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.forum h3,
+.post h3 {
+    font-size: 24px;
+    color: #FDB515; /* Yellow headings */
+    margin-bottom: 10px;
+}
+
+.forum p,
+.post p {
+    font-size: 16px;
+    color: #FFFFFF; /* Light text color */
+}
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s, transform 2s;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FDB515; /* Yellow headings */
+}
+
+.section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #FFFFFF; /* Light text color */
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border: 1px solid #FDB515; /* Yellow border */
+    border-radius: 10px;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.contact-us {
+    background-color: #000000; /* Dark background */
+    color: #FFFFFF;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2B2B2B; /* Dark gray background */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+    color: #FDB515; /* Yellow label */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FDB515; /* Yellow button */
+    color: #000000; /* Dark text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #F0C14B; /* Lighter yellow on hover */
+}
+
+footer {
+    background-color: #000000; /* Dark background */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+}
