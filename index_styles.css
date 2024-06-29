@@ -2,8 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1A1A1A; /* Dark background */
-    color: #FFFFFF; /* Light text color */
+    background-color: #1A1A1A;
+    color: #FFFFFF;
 }
 
 .container {
@@ -16,13 +16,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #000000; /* Dark background */
+    background-color: #000000;
     padding: 20px;
 }
 
 .title h1 {
-    font-size: 36px; /* Adjust as needed */
-    color: #FDB515; /* Yellow title */
+    font-size: 36px;
+    color: #FDB515;
     margin: 0;
 }
 
@@ -49,59 +49,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FDB515; /* Yellow hover */
+    color: #FDB515;
 }
 
 main {
-    padding-top: 40px; /* Adjust the padding to increase or decrease separation */
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start; /* Adjust alignment as needed */
-}
-
-.left-content {
-    flex: 1;
-    padding-right: 20px; /* Adjust spacing between left and right content */
-    text-align: left;
-}
-
-.right-content {
-    flex: 1;
-    padding-left: 20px; /* Adjust spacing between left and right content */
-    text-align: left;
-}
-
-.forums-content,
-.community-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    justify-content: center;
-}
-
-.forum,
-.post {
-    background-color: #2B2B2B; /* Dark gray background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.forum h3,
-.post h3 {
-    font-size: 24px;
-    color: #FDB515; /* Yellow headings */
-    margin-bottom: 10px;
-}
-
-.forum p,
-.post p {
-    font-size: 16px;
-    color: #FFFFFF; /* Light text color */
+    padding-top: 40px;
 }
 
 .section {
@@ -120,13 +72,12 @@ main {
 .section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #FDB515; /* Yellow headings */
+    color: #FDB515;
 }
 
 .section p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #FFFFFF; /* Light text color */
 }
 
 .slideshow-container {
@@ -134,20 +85,28 @@ main {
     max-width: 800px;
     margin: auto;
     overflow: hidden;
-    border: 1px solid #FDB515; /* Yellow border */
+    border: 1px solid #FDB515;
     border-radius: 10px;
+    perspective: 1000px; /* Add perspective for 3D effect */
 }
 
 .slides {
-    display: none;
-    width: 100%;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    display: flex;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
 }
 
-.slides img {
+.slide {
+    width: 100%;
+    transform: rotateY(180deg);
+    transition: transform 1s ease;
+}
+
+.slide img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    transition: transform 1s ease;
 }
 
 .carousel-caption {
@@ -160,6 +119,14 @@ main {
     padding: 10px;
     font-size: 18px;
     text-align: center;
+    transform: translateZ(50px); /* Move captions slightly forward */
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slide:hover .carousel-caption {
+    opacity: 1;
+    transform: translateZ(0); /* Bring caption forward on hover */
 }
 
 .prev, .next {
@@ -188,8 +155,59 @@ main {
     right: 10px;
 }
 
+.dots-container {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #FDB515;
+}
+
+
+.forums-content,
+.community-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.forum,
+.post {
+    background-color: #2B2B2B;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.forum h3,
+.post h3 {
+    font-size: 24px;
+    color: #FDB515;
+    margin-bottom: 10px;
+}
+
+.forum p,
+.post p {
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
 .contact-us {
-    background-color: #000000; /* Dark background */
+    background-color: #000000;
     color: #FFFFFF;
     padding: 80px 0;
     text-align: center;
@@ -199,7 +217,7 @@ main {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #2B2B2B; /* Dark gray background */
+    background-color: #2B2B2B;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -212,38 +230,70 @@ main {
 
 .contact-form label {
     margin-bottom: 10px;
-    color: #FDB515; /* Yellow label */
+    font-size: 16px;
+    color: #FDB515;
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
+.contact-form input[type="file"] {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #FDB515;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+}
+
+.contact-form select,
+.contact-form input[type="file"],
+.contact-form button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    color: #333333;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #FDB515;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    margin-bottom: 20px;
 }
 
 .contact-form button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #FDB515; /* Yellow button */
-    color: #000000; /* Dark text color */
     cursor: pointer;
+    background-color: #FDB515;
+    color: #000000;
     transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #F0C14B; /* Lighter yellow on hover */
+    background-color: #FFD700;
 }
 
 footer {
-    background-color: #000000; /* Dark background */
+    background-color: #000000;
     color: #FFFFFF;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
